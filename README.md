@@ -40,22 +40,21 @@ This is a simple CRUD (Create, Read, Update, Delete) application built using Fla
     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=<sa_password>' -p 1434:1433 --name test_sql_server -d mcr.microsoft.com/mssql/server
     ```
 
-6. **Setup Databases with Azure Data Studio:
-**
-    6.1. Download and install Azure Data Studio from the official Microsoft [website](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15).
-    6.2. Open Azure Data Studio.
-    6.3. Connect to the main SQL Server container using the following credentials:
+6. **Setup Databases with Azure Data Studio:**
+    1. Download and install Azure Data Studio from the official Microsoft [website](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15).
+    2. Open Azure Data Studio.
+    3. Connect to the main SQL Server container using the following credentials:
         - Server: `localhost,1433`
         - Authentication Type: `SQL Login`
         - User name: `sa`
         - Password: `<sa_password>`
-    6.4 Connect to the test SQL Server container using the following credentials:
+    4. Connect to the test SQL Server container using the following credentials:
         - Server: `localhost,1434`
         - Authentication Type: `SQL Login`
         - User name: `sa`
         - Password: `<sa_password>`
-    6.5. Create the banks_db and test_banks_db databases in the main and test SQL Server containers respectively.
-    6.6 Create the banks table in the banks_db and test_banks_db databases using the following SQL query:
+    5. Create the banks_db and test_banks_db databases in the main and test SQL Server containers respectively.
+    6. Create the banks table in the banks_db and test_banks_db databases using the following SQL query:
         ```sql
         CREATE TABLE banks (
             id INT IDENTITY(1,1) PRIMARY KEY,
