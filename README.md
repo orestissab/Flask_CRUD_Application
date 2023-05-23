@@ -89,3 +89,8 @@ Run the tests using the following command:
 ```bash
 pytest test_app.py
 ```
+or run the api interaction test using the following command:
+
+```bash
+python test_api_interaction.py
+```
