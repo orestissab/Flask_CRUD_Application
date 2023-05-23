@@ -1,3 +1,6 @@
+"""
+This module provides tests for CRUD operations in the Flask application.
+"""
 import os
 import pytest
 from flask import Flask
@@ -17,6 +20,9 @@ app.register_blueprint(bank_blueprint)
 
 @pytest.fixture
 def client():
+    """
+    Provide a test client for the Flask application.
+    """
     with app.test_client() as client:
         with app.app_context():
             db.create_all()
@@ -24,6 +30,9 @@ def client():
 
 @pytest.fixture(autouse=True)
 def run_around_tests():
+    """
+    Run setup and teardown code around each test.
+    """
     with app.app_context():
         db.create_all()
     

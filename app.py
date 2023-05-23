@@ -1,3 +1,6 @@
+"""
+This module runs the Flask application with configured database and blueprint.
+"""
 import os
 from dotenv import load_dotenv
 from create_app import create_app, db
@@ -6,6 +9,9 @@ from bank_blueprint import bank_blueprint
 load_dotenv()
 
 def run_app():
+    """
+    Initialize and run the Flask application with configured database and blueprint.
+    """
     app = create_app({
         "SQLALCHEMY_DATABASE_URI": os.getenv('MAIN_DB_URI'),
         "SQLALCHEMY_TRACK_MODIFICATIONS": True,
